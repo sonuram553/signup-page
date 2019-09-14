@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- GoogleFonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/c73892b851.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <hgroup>
+          <h1>Create your Account</h1>
+          <h2>to continue to ABC</h2>
+        </hgroup>
+      </header>
+
+      <figure>
+        <img src="account.svg" alt="" width="200" height="200" />
+        <figcaption>One account. All of ABC working for you.</figcaption>
+      </figure>
+
+      <form action="#" novalidate>
+        <ul>
+          <li class="firstName">
+            <div class="inputGroup">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required />
+            </div>
+            <p class="validation">
+              <span class="required">
+                <i class="fas fa-exclamation-circle"></i>Required
+              </span>
+            </p>
+          </li>
+          <li class="lastName">
+            <div class="inputGroup">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required />
+            </div>
+            <p class="validation">
+              <span class="required">
+                <i class="fas fa-exclamation-circle"></i>Required
+              </span>
+            </p>
+          </li>
+          <li class="email">
+            <div class="inputGroup">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <p class="validation">
+              <span class="required">
+                <i class="fas fa-exclamation-circle"></i>Required
+              </span>
+              <span class="invalid">
+                <i class="fas fa-exclamation-circle"></i>
+                Use characters (a-z, 0-9, -) in email address.
+              </span>
+            </p>
+          </li>
+          <li class="password">
+            <div class="inputGroup">
+              <label for="password">Password</label>
+              <input type="password" id="password" required />
+            </div>
+            <p class="validation">
+              <span class="required">
+                <i class="fas fa-exclamation-circle"></i>Required
+              </span>
+              <span class="invalid">
+                <i class="fas fa-exclamation-circle"></i>
+                Password must be 8 characters long or more. Must contains one
+                character from a-z, one from A-Z, one from 0-9.
+              </span>
+            </p>
+          </li>
+          <li class="confirm">
+            <div class="inputGroup">
+              <label for="confirm">Confirm Password</label>
+              <input type="password" id="confirm" required />
+            </div>
+            <p class="validation">
+              <span class="required">
+                <i class="fas fa-exclamation-circle"></i>Required
+              </span>
+              <span class="invalid">
+                <i class="fas fa-exclamation-circle"></i>Password does not
+                match.
+              </span>
+            </p>
+          </li>
+          <li class="submitBtn"><button type="submit">Sign up</button></li>
+        </ul>
+      </form>
+    </main>
+
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+  </body>
+</html>

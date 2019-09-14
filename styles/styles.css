@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  min-width: 500px;
+}
+
+body {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header h1 {
+  opacity: 0.8;
+  font-weight: 700;
+}
+header h2 {
+  opacity: 0.7;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+figure {
+  margin: 40px 0;
+}
+figure figcaption {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+li {
+  margin: 10px 0;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 13px 15px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+label {
+  background: white;
+  padding: 0 3px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s linear;
+}
+
+.labelUp {
+  top: 0;
+  font-size: 0.7rem;
+}
+
+.submitBtn {
+  padding-top: 20px;
+}
+
+button {
+  background: #0099cc;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+button:hover {
+  background: #33b5e5;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.validation {
+  margin: 5px 0 0;
+  color: red;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.validation,
+span {
+  display: none;
+}
+
+i {
+  padding: 0 5px;
+}
+
+.showInline {
+  display: inline;
+}
+
+.showBlock {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (min-width: 550px) and (max-width: 800px) {
+  main {
+    width: 70%;
+    margin: auto;
+  }
+}
+@supports (display: grid) {
+  @media (min-width: 800px) {
+    main {
+      width: 60%;
+      margin: auto;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px 0 0 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 3fr;
+      grid-template-areas: "header header" "form figure";
+    }
+
+    header {
+      grid-area: header;
+      text-align: left;
+    }
+
+    figure {
+      grid-area: figure;
+      margin: 0 auto;
+    }
+    figure figcaption {
+      width: 80%;
+      margin: auto;
+    }
+
+    ul {
+      grid-area: form;
+      display: grid;
+      grid-gap: 15px;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto auto;
+      grid-template-areas: "firstName lastName" "email email" "password password" "confirm confirm" "button ...";
+    }
+
+    li {
+      margin: 0;
+    }
+
+    .fistName {
+      grid-area: firstName;
+    }
+
+    .lastName {
+      grid-area: lastName;
+    }
+
+    .email {
+      grid-area: email;
+    }
+
+    .password {
+      grid-area: password;
+    }
+
+    .confirm {
+      grid-area: confirm;
+    }
+
+    .submitBtn {
+      grid-area: button;
+    }
+  }
+}
+@media (min-width: 1000px) {
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
