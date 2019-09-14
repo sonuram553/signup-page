@@ -1,5 +1,7 @@
 let inputs = document.querySelectorAll("input"),
   submitBtn = document.querySelector("button"),
+  form = document.querySelector("form"),
+  isFormValid = "",
   label;
 
 inputs.forEach(input => {
@@ -7,7 +9,10 @@ inputs.forEach(input => {
   input.onblur = handleBlur;
 });
 
-submitBtn.onclick = validation;
+submitBtn.onclick = validate;
+form.onsubmit = e => {
+  if (!isFormValid) e.preventDefault();
+};
 
 function handleFocus() {
   label = this.previousElementSibling;
@@ -18,12 +23,14 @@ function handleBlur() {
   if (!this.value) label.classList.remove("labelUp");
 }
 
-function validation() {
+function validate() {
+  let flag = 0;
   inputs.forEach(input => {
     let validationPara = input.parentElement.nextElementSibling;
     if (input.value === "") {
       validationPara.classList.add("showBlock");
       validationPara.children[0].classList.add("showInline");
+      flag = 1;
     } else {
       validationPara.classList.remove("showBlock");
       validationPara.children[0].classList.remove("showInline");
@@ -40,6 +47,7 @@ function validation() {
     if (!re.test(email.value)) {
       validationPara.classList.add("showBlock");
       validationPara.children[1].classList.add("showInline");
+      flag = 1;
     } else {
       validationPara.classList.remove("showBlock");
       validationPara.children[1].classList.remove("showInline");
@@ -56,6 +64,7 @@ function validation() {
     if (!re.test(password.value)) {
       validationPara.classList.add("showBlock");
       validationPara.children[1].classList.add("showInline");
+      flag = 1;
     } else {
       validationPara.classList.remove("showBlock");
       validationPara.children[1].classList.remove("showInline");
@@ -67,10 +76,14 @@ function validation() {
         if (confirmPassword.value !== password.value) {
           validationPara.classList.add("showBlock");
           validationPara.children[1].classList.add("showInline");
+          flag = 1;
         } else {
           validationPara.classList.remove("showBlock");
           validationPara.children[1].classList.remove("showInline");
         }
     }
   }
+
+  if (flag === 0) isFormValid = true;
+  else isFormValid = false;
 }

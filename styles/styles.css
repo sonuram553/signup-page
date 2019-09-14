@@ -34,6 +34,10 @@ ul {
   padding: 0;
 }
 
+li {
+  margin-bottom: 20px;
+}
+
 header h1 {
   opacity: 0.8;
   font-weight: 700;
@@ -50,10 +54,6 @@ figure {
 figure figcaption {
   opacity: 0.7;
   font-size: 0.9rem;
-}
-
-li {
-  margin: 10px 0;
 }
 
 input {
@@ -80,10 +80,6 @@ label {
 .labelUp {
   top: 0;
   font-size: 0.7rem;
-}
-
-.submitBtn {
-  padding-top: 20px;
 }
 
 button {
@@ -143,16 +139,19 @@ i {
 }
 @supports (display: grid) {
   @media (min-width: 800px) {
+    body {
+      padding-top: 80px;
+    }
+
     main {
       width: 60%;
       margin: auto;
       border-radius: 4px;
       border: 1px solid rgba(0, 0, 0, 0.2);
-      padding: 10px 0 0 20px;
+      padding: 10px 0 20px 20px;
       display: grid;
       grid-gap: 10px;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr 3fr;
+      grid-template-columns: 1.7fr 1.3fr;
       grid-template-areas: "header header" "form figure";
     }
 
@@ -170,6 +169,10 @@ i {
       margin: auto;
     }
 
+    li {
+      margin: 0;
+    }
+
     ul {
       grid-area: form;
       display: grid;
@@ -177,10 +180,6 @@ i {
       grid-template-columns: auto auto;
       grid-template-rows: auto auto auto auto auto;
       grid-template-areas: "firstName lastName" "email email" "password password" "confirm confirm" "button ...";
-    }
-
-    li {
-      margin: 0;
     }
 
     .fistName {
@@ -206,12 +205,6 @@ i {
     .submitBtn {
       grid-area: button;
     }
-  }
-}
-@media (min-width: 1000px) {
-  img {
-    width: 200px;
-    height: 200px;
   }
 }
 
