@@ -50,6 +50,7 @@ figure {
 figure figcaption {
   opacity: 0.7;
   font-size: 0.9rem;
+  margin-top: 20px;
 }
 
 input {
@@ -162,7 +163,7 @@ i {
     }
     figure figcaption {
       width: 80%;
-      margin: auto;
+      margin: 20px auto;
     }
 
     li {
