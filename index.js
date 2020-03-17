@@ -40,7 +40,7 @@ function validate() {
   //-----Check email-----
   let email = document.querySelector("#email");
   if (email.value !== "") {
-    let pattern = String.raw`^[a-zA-z]+([\w-.]*[a-zA-Z0-9]+)*@([a-z]+\.)+[a-z]+$`,
+    let pattern = String.raw`^[a-zA-z]+([\w-\.]*[a-zA-Z0-9]+)*@([a-z]+\.)+[a-z]+$`,
       re = new RegExp(pattern),
       validationPara = email.parentElement.nextElementSibling;
 
@@ -52,12 +52,15 @@ function validate() {
       validationPara.classList.remove("showBlock");
       validationPara.children[1].classList.remove("showInline");
     }
+  } else {
+    let validationPara = email.parentElement.nextElementSibling;
+    validationPara.children[1].classList.remove("showInline");
   }
 
   //-----Check password-----
   let password = document.querySelector("#password");
   if (password.value !== "") {
-    let pattern = String.raw`(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#@$%&!^._-])^[\w#@$%&!^.-]{8,}$`,
+    let pattern = String.raw`(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#@$%&!^\._-])^[\w#@$%&!^\.-]{8,}$`,
       re = new RegExp(pattern),
       validationPara = password.parentElement.nextElementSibling;
 
@@ -82,6 +85,9 @@ function validate() {
           validationPara.children[1].classList.remove("showInline");
         }
     }
+  } else {
+    let validationPara = password.parentElement.nextElementSibling;
+    validationPara.children[1].classList.remove("showInline");
   }
 
   if (flag === 0) isFormValid = true;
